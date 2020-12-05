@@ -1,0 +1,31 @@
+{% extends 'products/base.html' %}
+
+{% block content%}
+<form method="POST" action=".">{% csrf_token %} 
+
+{{forms.as_p}}
+
+<h3>{{object}}</h3>
+<p>
+    <b>
+        Subtotal
+    </b>
+    {{object.subtotal}}
+</p>
+
+<p>
+    <b>
+        Tax
+    </b>
+    {{object.subtotal}}
+</p>
+
+<p>
+    <b>
+        Total
+    </b>
+    {{object.total}}
+</p>
+<button type="submit">Complete Order</button>
+</form>
+{% endblock %}

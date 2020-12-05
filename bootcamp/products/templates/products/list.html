@@ -1,0 +1,16 @@
+{% extends "products/base.html" %}
+{% load static %}
+{% block title%}
+ Products - {{ block.super }} 
+ {% endblock %}
+{% block content%}
+
+    {% for object in object_list %}
+        <div>
+            <h1>Preparing Recipi</h1>{{object.title}}
+            {% include "products/detail_snippet.html" with product=object %}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

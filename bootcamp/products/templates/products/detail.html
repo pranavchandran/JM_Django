@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+{{object.title}} - {{ block.super }}
+{% endblock %}
+
+{% block content%}
+<!-- {% include 'products/navbar.html'%} -->
+<h1>{{object.title}}</h1>
+{% if request.path != '/'%}
+    <h3>Welcome Homebuddy {{ request.path }}</h3>
+    <h2> {{object}}::{{object.id}}</h2>
+{% else %}
+    {% include 'products/detail_snippet.html' with product=object%}    
+{% endif %} 
+
+{% endblock content %}
